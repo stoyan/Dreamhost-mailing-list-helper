@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>
+      Mailing list subscription confirmed
+    </title>
+  </head>
+  <body>
+    <h1>
+      You're subscribed!
+    </h1>
+    <p>
+      Welcome to the mailing list! We'll never spam you and will send <span id="email"></span> an email 
+      only when we have something cool to share.
+    </p>
+    <script>
+      email.innerHTML = decodeURIComponent(location.search.split('&')[0].replace('?address=', '')) || '';
+    </script>
+  </body>
+</html>

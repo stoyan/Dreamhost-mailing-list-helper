@@ -1,0 +1,37 @@
+<h2>Join our mailing list</h2>
+<script>
+function setupFormTarget(form) {
+  var message = form.getElementsByTagName('p')[0];
+  if (!form.email) {
+    message.innerHTML = 'Please enter an email address';
+    return false;
+  }
+  var iframe = document.createElement('iframe');
+  (iframe.frameElement || iframe).style.cssText = "width: 0; height: 0; border: 0";
+  iframe.name = 'mailistiframe';
+  form.appendChild(iframe);
+  form.target = iframe.name;
+  form.onsubmit = null;
+  iframe.onload = function() {
+    var path;
+    try {
+      path = iframe.contentWindow.location.pathname;
+    } catch(_) {
+      // some URL we can't access, maybe a dreamhost error
+    }
+    if (path.indexOf('invalidurl') > 0) {
+      message.innerHTML = 'The email address is invalid, please try again';
+    } else if (path.indexOf('alreadyonurl') > 0) {
+      message.innerHTML = 'The email address is already subscribed';
+    } else if (path.indexOf('checkyourmailurl') > 0) {
+      message.innerHTML = 'Almost done, just check your mail and click the link there to confirm your subscription';
+    }
+  };
+}
+</script>
+<form method="post" action="https://scripts.dreamhost.com/add_list.cgi" target="_blank" onsubmit="setupFormTarget(this)">
+  <p></p>
+  <input type="hidden" name="list" value="music@stoyanstefanov.com">
+  <input type="text" name="email">
+  <input type="submit" name="submit" value="Join">
+</form>

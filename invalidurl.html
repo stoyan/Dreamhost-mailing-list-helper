@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>
+      Mailing list error
+    </title>
+  </head>
+  <body>
+    <h1>
+      Invalid email address
+    </h1>
+    <p>
+      The email address <span id="email"></span> doesn't appear valid, please try again.
+    </p>
+    <script>
+      email.innerHTML = decodeURIComponent(location.search.split('&')[0].replace('?address=', '')) || '';
+    </script>
+  </body>
+</html>

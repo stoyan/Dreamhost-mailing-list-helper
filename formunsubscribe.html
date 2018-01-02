@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Unsubscribe</title>
+  </head>
+  <body>
+    <h2>
+      Unsubscribe from our mailing list
+    </h2>
+    <form method="post" action="https://scripts.dreamhost.com/add_list.cgi">
+      <input type="hidden" name="list" value="music@stoyanstefanov.com">
+      <input type="text" name="email" id="email">
+      <input type="submit" name="unsub" value="Unsubscribe">
+    </form>
+    <script>
+      email.value = decodeURIComponent(location.search.split('&')[0].replace('?address=', '')) || '';
+    </script>
+  </body>
+</html>

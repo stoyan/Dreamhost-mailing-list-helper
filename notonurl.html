@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Unsubscribe error</title>
+  </head>
+  <body>
+    <h2>
+      This email address <span id="email"></span> is not on our mailing list.
+    </h2>
+    <script>
+      email.innerHTML = decodeURIComponent(location.search.split('&')[0].replace('?address=', '')) || '';
+    </script>
+  </body>
+</html>
