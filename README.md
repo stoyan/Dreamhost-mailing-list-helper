@@ -19,7 +19,7 @@ Enjoy a free mailing list setup that you fully control and own too!
  * `notonurl.html`: The URL of the page that appears if they are not on the list, and they have attempted to unsubscribe
  * `unsuburl.html`: The URL of the "goodbye" page that appears if someone successfully unsubscribed from the list
 
-These are a lot of pages, and you may wonder how the whole flow works. Well you just embed the form.html in your templates or larger HTML pages. Then a small piece of javascript (in Dreamhost-mailing-list-helper/form.html) makes sure the mailing list form is submitted to a hidden iframe. In the spirit of progressive enhancement, if JS is disabled, all the HTML pages load in target=_blank. If JS is enabled, the forms are submitted to the hidden frame. Then depending on which page is loaded in the iframe, you show messages to the user inline. So no full-page reloads.
+These are a lot of pages, and you may wonder how the whole flow works. Well, you just embed the `form.html` in your templates or larger HTML pages. Then a small piece of javascript (in `Dreamhost-mailing-list-helper/form.html`) makes sure the mailing list form is submitted to a hidden iframe. In the spirit of progressive enhancement, if JS is disabled, all the HTML pages load in `target=_blank`. If JS is enabled, the forms are submitted to the hidden frame. Then depending on which page is loaded in the iframe, you show messages to the user inline. So no full-page reloads. Just good ol' Ajax from the times when Ajax wasn't even AJAX. Iframes, baby!
 
 # Example flows
 
